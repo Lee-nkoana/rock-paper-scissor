@@ -1,22 +1,21 @@
-//array  of the available options the computer and user can pick from
-const options = ["rock", "paper", "scissors"];
+const options = ["rock", "paper", "scissors"]; 
 
-//Set starting score of user and computer to 0
 let userScore = 0;
 let computerScore = 0;
 
-//Get a random option for the computer
 function getComputerChoice(){
     return options[(Math.floor(Math.random() * options.length))];    
 }
 
-//function for each single round of the game
-function playRound(playerPick, computerPick){
-    //Setting the computers pick to be the out put of the getComputerChoice function
+//function for each single round of the game and how points are scored
+function playRound(playerPick){
     let computerChoice = getComputerChoice();
-    //prompt the user to enter their pick
-    let usersChoice = prompt('pick between rock, paper, and scissors').toLowerCase();
+    let usersChoice = playerPick;
+    console.log(usersChoice);
 
+    console.log("user picked: "+ usersChoice);
+    console.log("computer picked: "+ computerChoice);
+    
     //Logic on which player gets a point
     if(usersChoice === computerChoice){
         console.log("it is a tie");
@@ -45,27 +44,39 @@ function playRound(playerPick, computerPick){
         userScore++
         console.log("user gets a point");
     }
-    else{
-        alert("Invalid option");
-    }
 
     console.log("user score is: " + userScore);
     console.log("computer score is: " + computerScore);
 
-    return(usersChoice, computerChoice);
+    return computerChoice;
+
 }
 
+//getting user input and playing round on click
+document.addEventListener('DOMContentLoaded', function(){
+    document.querySelector('#btnRock').onclick = ()=>{
+        playRound('rock');
+    };
+    document.querySelector('#btnPaper').onclick = ()=>{
+        playRound('paper');
+    };
+    document.querySelector('#btnScissors').onclick = ()=>{
+        playRound('scissors');
+    };
+})
+
 function Game(){
-    //looping over the playRound function until either the player or computer has a score of 5
-    while((userScore < 5) || (computerScore < 5)){
-        playRound();
-        if(userScore == 5){
-        console.log("Congratulations! You win!");
-        }
-        else if(computerScore == 5){
-        console.log("Game over! Computer wins!");
-        }
+    if(userScore = 5){
+    console.log("Congratulations! You win!");
+    }
+    else if(computerScore = 5){
+    console.log("Game over! Computer wins!");
     }
 }
 
 Game();
+
+function newGame(){
+    userScore = 0;
+    computerScore = 0;
+}
