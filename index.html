@@ -6,22 +6,40 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="style.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Creepster">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Nosifer&display=swap" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/d10563301d.js" crossorigin="anonymous"></script>
         <script src="script.js"></script>
         <title>Rock-paper-scissors</title>
     </head>
     <body>
         <div class="title">
-            <h1>Classic Rock, Paper, Scissors</h1>
+            <h1> Rock, Paper, Scissors</h1>
+        </div>
+        <div class="intro">
+            It's a AI take over! Defeat the machines before they destroy everything!
+        </div>
+        <div id="scoreBox">
+            <div>User score is: <span id="userScore">0</span>!</div>
+            <div>Computer score is: <span id="compScore">0</span>!</div>
         </div>
         <div class="game_box">
-            <div id="userPicks">
-                <button id="btnRock" >Rock</button>
-                <button id="btnPaper" >Paper</button>
-                <button id="btnScissors" >Scissors</button>
+            <div class="userPick_disp">
+                You picked: <span id="user_data"> </span>
             </div>
             <div id="compPicks">
-
+                computer picked: <span id="comp_data"> </span>
             </div>
+        </div>
+        <div id="userPicks">
+            <button id="btnRock" ><i class="fa-solid fa-hand-back-fist fa-lg"></i></i></button>
+            <button id="btnPaper" ><i class="fa-solid fa-book-open fa-lg"></i></i></button>
+            <button id="btnScissors" ><i class="fa-solid fa-scissors fa-lg"></i></i></button>
+        </div>
+        <div class="genCont">
+            <button id="btnNewGame">New Game</button>
         </div>
     </body>
 </html>

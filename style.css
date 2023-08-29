@@ -1,5 +1,5 @@
 body{
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family:  "Creepster", -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     margin: 0;
     padding: 0;
     min-height: 100vh;
@@ -25,4 +25,105 @@ body, html{
     align-items: center;
     justify-content: center;
     margin: 20px;
+    font-family: "Creepster";
+    font-size: 40px;
+    color: red;
+}
+
+#btnRock, #btnPaper, #btnScissors, #btnNewGame{
+    width: 30%;
+    height: 60%;
+    color: red;
+    border-radius: 15px;
+    background-color: black;
+}
+
+.game_box{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: auto;
+    width: 60%;
+    font-size: 25px;
+    height: 120px;
+}
+
+.userPick_disp{
+    display: flex;
+    width: 50%;
+}
+
+#userPicks{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: auto;
+    width: 60%;
+    height: 120px;
+    background-color: rgb(44, 16, 16);
+}
+
+#compPicks{
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: 50%;
+}
+
+#scoreBox{
+    display: flex;
+    font-size: 30px;
+    width: 60%;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: auto;
+    background-color: rgb(44, 16, 16);
+    height: 120px;
+}
+
+.genCont{
+    display: flex;
+    width: 60%;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    background-color: rgb(44, 16, 16);
+}
+
+#btnRock:hover{
+    background-color: rgb(48, 43, 43);
+}
+
+#btnPaper:hover{
+    background-color: rgb(48, 43, 43);
+}
+
+#btnScissors:hover{
+    background-color: rgb(48, 43, 43);
+}
+
+#btnNewGame:hover{
+    background-color: rgb(48, 43, 43);
+}
+
+#user_data, #comp_data{
+    display: inline-block;
+    text-align: center;
+    margin: auto;
+    color: maroon;
+}
+
+.intro{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 60%;
+    justify-content: center;
+    margin: auto;
+    font-family: "Nosifer";
+    font-size: 20px;
+    color: red;
+    text-align: center;
 }

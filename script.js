@@ -3,6 +3,8 @@ const options = ["rock", "paper", "scissors"];
 let userScore = 0;
 let computerScore = 0;
 
+let msgWinner = "";
+
 function getComputerChoice(){
     return options[(Math.floor(Math.random() * options.length))];    
 }
@@ -45,8 +47,13 @@ function playRound(playerPick){
         console.log("user gets a point");
     }
 
-    console.log("user score is: " + userScore);
-    console.log("computer score is: " + computerScore);
+    //displaying the user and computer scores
+    document.getElementById('userScore').textContent = `${userScore}`;
+    document.getElementById('compScore').textContent = `${computerScore}`;
+
+    //displaying user and computer picks
+    document.getElementById('user_data').textContent = ` ${usersChoice} `;
+    document.getElementById('comp_data').textContent = ` ${computerChoice} `;
 
     return computerChoice;
 
@@ -63,14 +70,20 @@ document.addEventListener('DOMContentLoaded', function(){
     document.querySelector('#btnScissors').onclick = ()=>{
         playRound('scissors');
     };
+    document.querySelector('#btnNewGame').onclick = () =>{
+        newGame();
+    }
+    Game();
 })
 
 function Game(){
     if(userScore = 5){
-    console.log("Congratulations! You win!");
+    msgWinner = "Congratulations! You win!";
+    newGame();
     }
     else if(computerScore = 5){
-    console.log("Game over! Computer wins!");
+    msgWinner = "Game over! Computer wins!";
+    newGame();
     }
 }
 
@@ -79,4 +92,13 @@ Game();
 function newGame(){
     userScore = 0;
     computerScore = 0;
+
+     //displaying the user and computer scores
+     document.getElementById('userScore').textContent = `${userScore}`;
+     document.getElementById('compScore').textContent = `${computerScore}`;
+
+      //displaying user and computer picks
+    document.getElementById('user_data').textContent = " ";
+    document.getElementById('comp_data').textContent = " ";
+ 
 }
