@@ -1,4 +1,4 @@
-const options = ["rock", "paper", "scissors"]; 
+const options = ["rock", "paper", "scissors"];
 
 let userScore = 0;
 let computerScore = 0;
@@ -13,7 +13,7 @@ function getComputerChoice(){
 function playRound(playerPick){
     let computerChoice = getComputerChoice();
     let usersChoice = playerPick;
-    
+
     //Logic on which player gets a point
     if(usersChoice === computerChoice){
     }
@@ -69,14 +69,14 @@ document.addEventListener('DOMContentLoaded', function(){
 })
 
 function Game(){
-    if(userScore == 5){
+        if(userScore == 5){
         msgWinner = "Congratulations! You win!";
         document.getElementById('msg_box').textContent = `${msgWinner}`;
         document.getElementById("btnRock").disabled = true;
         document.getElementById("btnPaper").disabled = true;
         document.getElementById("btnScissors").disabled = true;
-    }
-    else if(computerScore == 5){
+        }
+        else if(computerScore == 5){
         msgWinner = "Game over! Computer wins!";
         document.getElementById('msg_box').textContent = `${msgWinner}`;
         document.getElementById("btnRock").disabled = true;
