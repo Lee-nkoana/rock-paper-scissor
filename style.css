@@ -8,6 +8,8 @@ body{
     background-repeat: no-repeat ;
     background-position: center;
     color: white;
+    display: flex;
+    flex-direction: column;
 }
 
 body, html{
@@ -52,6 +54,7 @@ body, html{
 .userPick_disp{
     display: flex;
     width: 50%;
+    flex-wrap: wrap;
 }
 
 #userPicks{
@@ -66,6 +69,7 @@ body, html{
 
 #compPicks{
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     height: 100%;
     width: 50%;
@@ -125,5 +129,36 @@ body, html{
     font-family: "Nosifer";
     font-size: 20px;
     color: red;
+    text-align: center;
+}
+
+.footer{
+    display: flex;
+    margin-top: auto;
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    font-size: 18px;
+    width: 100%;
+    background-color: rgb(44, 16, 16);
+}
+
+a{
+    text-decoration: none;
+    color: beige;
+}
+
+#msg_box{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 60%;
+    justify-content: center;
+    margin: auto;
+    font-family: "Nosifer";
+    font-size: 20px;
+    color: green;
     text-align: center;
 }

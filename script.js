@@ -13,38 +13,27 @@ function getComputerChoice(){
 function playRound(playerPick){
     let computerChoice = getComputerChoice();
     let usersChoice = playerPick;
-    console.log(usersChoice);
-
-    console.log("user picked: "+ usersChoice);
-    console.log("computer picked: "+ computerChoice);
     
     //Logic on which player gets a point
     if(usersChoice === computerChoice){
-        console.log("it is a tie");
     }
     else if((usersChoice === "rock") && (computerChoice === "paper")){
         computerScore++
-        console.log("computer gets a point");
     }
     else if((usersChoice === "rock") && (computerChoice === "scissors")){
         userScore++
-        console.log("player gets a point");
     }
     else if((usersChoice === "paper") && (computerChoice === "scissors")){
         computerScore++
-        console.log("computer gets a point");
     }
     else if((usersChoice === "paper") && (computerChoice === "rock")){
         userScore++
-        console.log("user gets a point");
     }
     else if((usersChoice === "scissors") && (computerChoice === "rock")){
         computerScore++
-        console.log("computer gets a point");
     }
     else if((usersChoice === "scissors") && (computerChoice === "paper")){
         userScore++
-        console.log("user gets a point");
     }
 
     //displaying the user and computer scores
@@ -55,6 +44,7 @@ function playRound(playerPick){
     document.getElementById('user_data').textContent = ` ${usersChoice} `;
     document.getElementById('comp_data').textContent = ` ${computerChoice} `;
 
+    Game();
     return computerChoice;
 
 }
@@ -73,17 +63,25 @@ document.addEventListener('DOMContentLoaded', function(){
     document.querySelector('#btnNewGame').onclick = () =>{
         newGame();
     }
-    Game();
+    document.getElementById("btnRock").disabled = false;
+    document.getElementById("btnPaper").disabled = false;
+    document.getElementById("btnScissors").disabled = false;
 })
 
 function Game(){
-    if(userScore = 5){
-    msgWinner = "Congratulations! You win!";
-    newGame();
+    if(userScore == 5){
+        msgWinner = "Congratulations! You win!";
+        document.getElementById('msg_box').textContent = `${msgWinner}`;
+        document.getElementById("btnRock").disabled = true;
+        document.getElementById("btnPaper").disabled = true;
+        document.getElementById("btnScissors").disabled = true;
     }
-    else if(computerScore = 5){
-    msgWinner = "Game over! Computer wins!";
-    newGame();
+    else if(computerScore == 5){
+        msgWinner = "Game over! Computer wins!";
+        document.getElementById('msg_box').textContent = `${msgWinner}`;
+        document.getElementById("btnRock").disabled = true;
+        document.getElementById("btnPaper").disabled = true;
+        document.getElementById("btnScissors").disabled = true;
     }
 }
 
@@ -100,5 +98,11 @@ function newGame(){
       //displaying user and computer picks
     document.getElementById('user_data').textContent = " ";
     document.getElementById('comp_data').textContent = " ";
+
+    document.getElementById('msg_box').textContent = " ";
+
+    document.getElementById("btnRock").disabled = false;
+    document.getElementById("btnPaper").disabled = false;
+    document.getElementById("btnScissors").disabled = false;
  
 }
